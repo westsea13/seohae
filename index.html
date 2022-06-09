@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>연습문제11 - 강아지 블로그 만들기 </title>
+  <!-- 시멘틱 태그 이용 -->
+  <!-- float속성을 이용 -> 나중에 flexbox이용 -->
+  <!-- DM으로 제출해주세요. -->
+  <style>
+    /* 초기화코드 */
+    * {
+      margin: 20; padding: 20;
+      /* float 속성을 사용전에 사용 */
+      overflow: hidden;
+      /* border: 1px solid red; */
+    }
+    a {
+      /* 밑줄 제거 */
+      text-decoration: none;
+    }
+    /* ..., 123 제거 */
+    ul, ol {
+      text-decoration: none;
+    }
+    body {
+      background-color: cyan;
+    }
+    #wrap {
+      /* 고정너비 */
+      width: 1000px; 
+      /* 콘텐츠의 크기만큼 */
+      height: auto;
+      /* 가로 중앙에 정렬(상하좌우 마진을 균등하게) */
+      margin: 0 auto;
+    }
+    .box {
+      display: flex;
+      flex-direction: row;
+    }
+    #header {
+          height: 100px;
+          font-family: serif;
+          /* 가로중앙으로 정렬 align: center; */
+          /* 세로중앙으로 정렬 vertical:middle;(2줄) */
+          /* 부모컨테이너와 동일한 높이 line-height: 100px(2줄) */
+          text-shadow: 1px 1px 10px gray;
+          justify-content: center;
+          }
+    #nav {
+          height: 25px;
+          background-color: rgb(141, 166, 235);
+          text-align: center;
+          border: 5px solid rgb(141, 166, 235);
+          justify-content: center;
+          align-items: center;
+        }
+    #nav a {
+          margin: 5px;
+          color: white;
+         }
+    img {
+        width: 200px; height: 150px;
+        object-fit: cover;
+      }
+    main {
+        width: 600px; height: auto;
+        flex-wrap: wrap;
+        align-items: center     
+      }
+    #aside {
+        /* inline속성, left로 붙인다 */
+        width: 200px;
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid green;
+        flex-direction: column;
+      }
+    #section {
+        /* inline속성, left로 붙인다 */
+        width: 700px; height: 600px;
+        margin: 10px;
+        flex-direction: column;
+      }
+      #footer {
+        /* float속성을 left,right 지움 */
+        clear: both;
+        text-align: center;
+        margin: 5px;
+        height: 50px;
+        background-color: darkgray;
+        align-items: center;
+        justify-content: center;
+      }
+      #footer a {
+        margin 5px;
+        /* 수직으로 정렬 */
+        vertical-align: middle;
+        line-height: 50px;
+        
+      }
+      #footer a:link {
+        color: black;
+      }
+      #footer a:visited {
+        color: black;
+      }
+  </style>
+</head>
+<body>
+  <!-- wrap 너비(고정) 1000px -->
+  <div id="wrap">
+    <div class="box" id="header">
+      <h1>골든리트리버-Golden Ritriever</h1>
+    </div>
+    <div class="box" id="nav">
+        <nav>
+          <a href="">About</a>  
+          <a href="">History</a> 
+          <a href="">information</a>  
+          <a href="">SNS</a>
+        </nav>
+    </div>
+
+    <div class="box" id="main">
+      <div class="box" id="aside">
+        <h4>Golden Ritriever</h4>
+        <img src="dog.jpg" alt="리트리버">
+        <ul>
+            <li><a href="#">● 기본특성</a></li><br>
+            <li><a href="#">● 단점</a></li><br>
+            <li><a href="#">● 키울 시 주의점</a></li><br>
+            <li><a href="#">● 파생 혼종견</a></li><br>
+        </ul>
+      </div>
+
+      <div class="box" id="section">
+        <h3>Golden Retriever</h3><br>
+          <p>개의 품종 중 하나로, 원산지는 영국의 스코틀랜드 지역이다. 비슷하게 생긴 래브라도 리트리버가 원형이다. 이름대로 윤기가 흐르는 크림빛 또는 금빛의 풍성한 털이 가장 큰 특징이며 은은하게 귀티가 흐르는 인상이다.</p>
+          <br>
+          <p>마당이 있는 집이 일반적인 미국과 영국, 또한 영국의 직할 속령이었던 아일랜드, 캐나다, 오스트레일리아나 뉴질랜드에서 자주 볼 수 있는 견종이라고 한다.</p>
+          <br>
+          <p>학대, 방임, 공격성을 방치한 훈육 등의 악조건을 겪지 않은 골든 리트리버는 대체로 온화한 성격을 지닌다. 강형욱 훈련사는 골든 리트리버의 온화한 성격에 대해 "100개의 옐로 카드를 가졌고, 한숨 자고 나면 옐로 카드가 전부 회복된다"라고 설명하기도 했다. 누군가 자신을 괴롭히더라도 99번까지는 봐줄 만큼 인내심이 좋다는 뜻.</p>
+      </div>
+    </div>
+
+    <div class="box" id="footer">
+        <footer>
+            <a href="">Subscribe</a>
+            <a href="">About Authour</a>
+            <a href="">Send us Email</a>
+        </footer>
+
+    </div>
+  </div>
+</body>
+</html>
